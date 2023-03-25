@@ -19,15 +19,14 @@ from django.conf.urls.static import static
 
 from django.contrib import admin
 from django.urls import path, include
-from core.views import index, contact
-
 
 urlpatterns = [
-    path("", index, name="index"),
+    path(
+        "", include("core.urls")
+    ),  # it'll loop through all the urls in puddle/core/urls.py until goes to the next path
     path(
         "items/", include("item.urls")
     ),  # all urls that starts with item will go to item/urls.py
-    path("contact/", contact, name="contact"),
     path("admin/", admin.site.urls),
 ] + static(  # this for dev only also
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
