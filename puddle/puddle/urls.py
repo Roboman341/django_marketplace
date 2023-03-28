@@ -27,6 +27,7 @@ urlpatterns = [
     path(
         "items/", include("item.urls")
     ),  # all urls that starts with item will go to item/urls.py
+    path("dashboard", include("dashboard.urls")),
     path("admin/", admin.site.urls),
 ] + static(  # this for dev only also
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
