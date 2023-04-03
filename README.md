@@ -26,7 +26,9 @@ python manage.py migrate
 ## users
 ```bash
 # to be able to manage authentication the admin user needed
-python manage.py create superuser
+python manage.py createsuperuser
 ```
 
-44:25
+TODO:
+- during editing the item user should be able to update the item's category
+- fix the error while registering a new user (inserted password is too short)
